@@ -2,7 +2,7 @@
 
 High-level abstract Java interface for building video libraries.
 
-For API documentation refer to javadoc inside [VideoLibrary.java](src/main/java/me/vkryl/videolib/VideoLibrary.java).
+For API documentation refer to javadoc inside [VideoLibrary.java](lib/src/main/java/me/vkryl/videolib/VideoLibrary.java).
 
 ## Licence
 
