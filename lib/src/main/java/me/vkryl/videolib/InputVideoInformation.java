@@ -70,7 +70,7 @@ public class InputVideoInformation {
   public AvailableFeatures availableFeatures;
 
   /**
-   * Arbitrary cache needed for any kind of optimizations in {@link VideoLibrary#correctTrimSegment(Context, Uri, TimeSegmentsCache, TimeSegment, Callback)}.
+   * Arbitrary cache needed for any kind of optimizations in {@link VideoLibrary#correctTrimSegment(Context, Uri, TimeSegmentsCache, TimeSegment, boolean, Callback)}.
    */
   public TimeSegmentsCache trimCache;
 }

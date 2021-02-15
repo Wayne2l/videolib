@@ -84,10 +84,10 @@ public interface VideoLibrary {
   long correctTrimSegment (Context context, Uri uri, TimeSegmentsCache timeSegmentsCache, TimeSegment segment, boolean correctEnd, Callback<TimeSegment, VideoLibraryError> callback);
 
   /**
-   * Creates a still output video preview without a need in waiting the video to be generated.
+   * Creates a static image with output video preview without a need in waiting the video to be generated.
    *
    * This method shouldn't rely on the precise match of the output video quality, but
-   * generate
+   * shouldn't miss any essential parameters that affect the content.
    *
    * @param context Context
    * @param uri Input video path, file:// or content://.
@@ -97,7 +97,19 @@ public interface VideoLibrary {
    *
    * @return Task identifier that could be cancelled via {@link #cancel(long)}
    */
-  long generateStaticPreview (Context context, Uri uri, int maxSize, OutputVideoConfiguration configuration, OverlayProvider overlayProvider, Callback<Bitmap, VideoLibraryError> callback);
+  long generateThumbnail (Context context, Uri uri, int maxSize, OutputVideoConfiguration configuration, OverlayProvider overlayProvider, Callback<Bitmap, VideoLibraryError> callback);
+
+  /**
+   * Provides an estimated video output size for the given configuration.
+   *
+   * @param context Context
+   * @param uri Input video path, file:// or content://.
+   * @param configuration Conversion configuration
+   * @param callback Callback to invoke
+   *
+   * @return Task identifier that could be cancelled via {@link #cancel(long)}
+   */
+  long estimateOutputVideoSize (Context context, Uri uri, OutputVideoConfiguration configuration, Callback<EstimatedOutputSize, VideoLibraryError> callback);
 
   /**
    * Converts the input video or .GIF image based on the provided configuration.

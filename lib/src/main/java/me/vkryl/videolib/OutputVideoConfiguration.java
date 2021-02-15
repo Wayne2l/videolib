@@ -28,7 +28,7 @@ import java.util.List;
  *
  * Used by:
  * - {@link VideoLibrary#convertVideo(Context, Uri, OutputVideoConfiguration, OverlayProvider, String, ConversionCallback)}
- * - {@link VideoLibrary#generateStaticPreview(Context, Uri, int, OutputVideoConfiguration, OverlayProvider, Callback)}
+ * - {@link VideoLibrary#generateThumbnail(Context, Uri, int, OutputVideoConfiguration, OverlayProvider, Callback)}
  */
 public class OutputVideoConfiguration {
   /**
